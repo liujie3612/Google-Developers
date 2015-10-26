@@ -1,5 +1,4 @@
-使用 Console
-==
+#使用 Console
 
 JavaScript Console 为开发者们测试网页和应用提供了两个主要的功能：
 

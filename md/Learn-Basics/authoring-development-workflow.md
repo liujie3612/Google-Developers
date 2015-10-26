@@ -1,6 +1,6 @@
 #开发工作流程
 
-开发者的工作流程中通常会涉及到一些步骤来完成某个任务。当使用“开发者工具”进行开发时，我们可以对其进行优化，以便更加快速地完成常见任务，例如定位文件或函数、即时编辑脚本与样式、保存常用的代码片段，或者为了使用方便而进行简单的布局调整。
+为了完成某个**目标**，开发者的工作流程通常会拆解为几个步骤。当使用开发者工具进行开发时，我们可以对其进行**优化**，以便更加快速地完成常见任务，例如定位文件或函数、即时编辑脚本或者样式表、保存常用的代码片段，或者为了使用方便而进行简单的布局调整。
 
 在这一章节里，我们将探索一些技巧，它们将使你更高效地使用“开发者工具”。
 
@@ -12,59 +12,50 @@
 
 - 想充分利用宽屏显示器的空间来查看与调试代码；
 - 使分离区域的宽度小于400px（目前Chrome的最小宽度）来测试窗口大小改变时的布局；
-- 纵向空间更便于调试较长的脚本。
+- 纵向空间更便于调试较长的脚本;
 
-打开需要调试的页面，然后通过**长按**“开发者工具”左下角的布局图标来进行切换。
+导航到一个你想调试的地方，然后通过**长按**“开发者工具”左下角的布局图标![](https://developer.chrome.com/devtools/images/layout-button.png)来进行切换，这样就能使得窗口栏在右侧显示或者以窗口的形式出现。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/chrome_docktomain.jpg)
 
 > **注意**：“开发者工具”会记住你上一次的选择，所以你可以在最常用的两项间来回切换。
 
-长按图标会显示可选的布局方式，选择后布局将会立即改变生效。
+布局选项的具体展示能拓展，一旦你选好了你的偏好设置，布局改变将会立即生效。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/chrome_docktoright.jpg)
 
 > **注意**：每个标签页中的“开发者工具”可以有其各自的位置。这意味着一个标签页中的“开发者工具”可以在右侧，同时在另一个标签页中位于底部。
 
-##快速拖动至右侧
+##搜索，导航和过滤
 
-也可以按住并拖动“开发者工具”的工具栏来改变其位置，就像下面动画里所展示的那样。
+###脚本，样式表，片段按照文件名来过滤
 
-![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/devtools-drag-to-right.gif)
+能够快速找到一个特定文件是开发人员工作流程中必不可少的一个功能。通过使用以下的快捷键，“开发者工具”能让你搜索到所有的脚本，样式表，和片段文件。
+* `Ctrl`+`O`(Windows,Linux)
+* `Cmd`+`O`(Mac OS X)
 
-相对于前一种通过布局按钮进行切换的方法，这种方法可以作为一个有用的替代，因为它仅需一个步骤。
-
-##搜索、定位与过滤
-
-###通过文件名过滤查找一个脚本、样式或代码片段
-
-快速定位文件对开发者来说是个基础的功能。“开发者工具”允许你在所有的脚本、样式以及代码片段中用下面的快捷键进行查找：
-
-- `Ctrl + O (Windows, Linux)`
-- `Cmd + O (Mac OSX)`
-
-这些快捷键无论在哪个面板中都会生效。例如对于这个[Todo app](http://todomvc.com/architecture-examples/angularjs/#/)，上面的快捷键将会打开“Source”面板，并展现一个显示了所有可用文件的搜索框。
+无论你现在工作在哪个工作面板下，对于这个[Todo应用](http://todomvc.com/examples/angularjs/#/),使用这些快捷键中的一种能让我们切换到*Sources* 面板中，同时呈现出一个列出所有可检查文件的搜索框。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_filter.jpg)
 
-我们还可以定位到更具体的文件（例如文件名中包含“script”）或者选择一个文件来查看或编辑。
+从这里，我们能过滤出特定的文件（例如，文件名中包含"script"字段的文件）或者选择一个文件去浏览或者编辑。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_basefind.jpg)
+ 
+> **注意**：在我们所有的对话框中，我们支持驼峰匹配的方式，例如打开FooBarScript.js，你只需要打出FBaSc，这样能够节省时间。
 
-> **注意**：我们在所有的对话框中都支持驼峰式匹配。例如需要打开`FooBarScript.js`，为节省时间只需输入`FBaSc`即可。
+###在当前文件下搜索文本
 
-###在当前文件中查找文本
+在当前文件下搜索特定的字符串可以通过以下的快捷键来完成：
 
-在当前文件中查找特定字符串可以用下面的快捷键完成：
+* `Ctrl`+`F`(Windows, Linux)
+* `Cmd`+`F`(Mac OS X)
 
-- `Ctrl + F (Windows, Linux)`
-- `Cmd + F (Mac OSX)`
-
-在搜索框中输入关键词后，按回车跳至第一项匹配的结果。接着按回车会跳到下一个匹配结果，同时可以点击（搜索框右侧的）上下箭头在结果间进行切换，如下图所示。
+一旦一个关键词输入到搜索框里，回车定位到第一个匹配的结果，随后将会定位到下一个，你也可以通过如下图展示的那样的`up``down`键来在结果之间来移动。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_findone.jpg)
 
-###在当前文件中替换文本
+###在当前文件下替换文本
 
 除了支持在当前文件中查找文本，“开发者工具”也支持对单个匹配项或所有匹配项进行替换。选中“Replace”将会出现第二个文本框以便输入替换的内容。
 
