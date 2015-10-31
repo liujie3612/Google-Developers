@@ -15,7 +15,7 @@
 - *收起*你不用的标签和面板
 - *规划和分配*你的DOM树和工具面板区域
 
-![规划屏幕](../../images/elements1.gif)
+![规划屏幕](../../../images/elements1.gif)
 
 ## DOM
 
@@ -28,11 +28,11 @@ DOM树视图在树上显示当前状态。这可能是与最初加载的HTML不�
 
 ### 审查元素
 
- ![审查元素](../../images/elements2.gif)
+ ![审查元素](../../../images/elements2.gif)
 
 检查在显示的DOM节点和CSS中，对应在浏览器中渲染的元素。
 
-![审查元素](../../images/elements3.gif)
+![审查元素](../../../images/elements3.gif)
 
 这里，有若干种方法审查元素
 
@@ -41,34 +41,34 @@ DOM树视图在树上显示当前状态。这可能是与最初加载的HTML不�
 - 点击*审查元素按钮*
 - 在*console*中使用`inspect()`方法，比如`inspect(document.body)`，可以在[Command-Line API](https://developer.chrome.com/devtools/docs/commandline-api.md)中查看`inspect()`的使用方法
 
-![删除节点](../../images/elements4.gif)
+![删除节点](../../../images/elements4.gif)
 
 ### 使用鼠标和键盘来浏览DOM
 
 你能够通过鼠标或者键盘来操作DOM结构
 
-- 展开一个收起的节点![collapsed-div](../../images/collapsed-div.png)，双击这个节点，或者按下方向键`→`
-- 收起一个展开的节点![expanded-body](../../images/expanded-body.png)，双击这个节点，或者按下方向键`←`
+- 展开一个收起的节点![collapsed-div](../../../images/collapsed-div.png)，双击这个节点，或者按下方向键`→`
+- 收起一个展开的节点![expanded-body](../../../images/expanded-body.png)，双击这个节点，或者按下方向键`←`
 
 展开一个节点，会再按住`→`会自动的选择第一个子节点，你可以通过反复的按住`→`来展开深度嵌套的结构
 
-![expendNode](../../images/elements5.gif)
+![expendNode](../../../images/elements5.gif)
 
 当你浏览时，`Elements`面板底部会显示的`面包屑`工具条
 
-![breadcrumb-body](../../images/breadcrumb-body.png)
+![breadcrumb-body](../../../images/breadcrumb-body.png)
 
 当前选中的节点会以蓝色高亮显示，可以点击`面包屑`来浏览
 
-![breadcrumb-footer](../../images/breadcrumb-footer.png)
+![breadcrumb-footer](../../../images/breadcrumb-footer.png)
 
 浏览上一级结构，高亮也会移动
 
-![breadcrumb-trail](../../images/breadcrumb-trail.png)
+![breadcrumb-trail](../../../images/breadcrumb-trail.png)
 
 开发人员工具尽可能的在`面包屑`中显示更多项
 
-![breadcrumb-ellipsis](../../images/breadcrumb-ellipsis.png)
+![breadcrumb-ellipsis](../../../images/breadcrumb-ellipsis.png)
 
 如果单个`项`不能够在`面包屑`工具条上面显示，那么会以`...`显示，单击`...`显示隐藏的元素。
 
@@ -88,22 +88,22 @@ DOM树视图在树上显示当前状态。这可能是与最初加载的HTML不�
 #### 编辑DOM节点
 
 对于DOM节点，双击可以打开*元素标签*(`h2`, `section`, `img`)。方框内现在处于可编辑可重命名，闭合标签会自动的在修改后更新。
-![editable-dom-node](../../images/editable-dom-node.png)
+![editable-dom-node](../../../images/editable-dom-node.png)
 
-![修改标签](../../images/elements6.gif)
+![修改标签](../../../images/elements6.gif)
 
 ### 编辑属性
 
 对于DOM属性，开发者工具区别属性的名字和值在于点击它们的位置，使它们可编辑。
 
-- 双击属性名字![edit-node-attribute](../../images/edit-node-attribute.png)编辑属性名
-- 双击属性值![edit-node-attribute-value](../../images/edit-node-attribute-value.png)编辑它的值部分
+- 双击属性名字![edit-node-attribute](../../../images/edit-node-attribute.png)编辑属性名
+- 双击属性值![edit-node-attribute-value](../../../images/edit-node-attribute-value.png)编辑它的值部分
 
 当编辑模式被激活，可以按*Tab*循环切换当你切换到最后一个标签，再次按下*Tab*将会创建一个新的属性。
 
 使用*Tab*不是用来添加和编辑属性的唯一方法，因为这是一个常用的模式，也可以在DOM节点上打开内容菜单，添加和编辑属性。
 
-![editandadd](../../images/editandadd.png)
+![editandadd](../../../images/editandadd.png)
 
 - 选择*Add Attribute* 在打开的标签最后创建一个新的方框
 - 选择*Edit Attribute* 修改当前的属性。这个操作会和你之前的操作相关，你可编辑的位置是你点击右键的位置。
@@ -120,7 +120,7 @@ DOM树视图在树上显示当前状态。这可能是与最初加载的HTML不�
 
 点击`Esc`停止编辑，不修改DOM
 
-![编辑HTML](../../images/elements7.gif)
+![编辑HTML](../../../images/elements7.gif)
 
 ### 移动元素
 
@@ -128,7 +128,7 @@ DOM树视图在树上显示当前状态。这可能是与最初加载的HTML不�
 
 在`Elements`面板拖动节点移动到DOM树上一个新的位置。
 
-![拖动节点](../../images/elements8.gif)
+![拖动节点](../../../images/elements8.gif)
 
 ### 删除元素
 
@@ -147,7 +147,7 @@ DOM树视图在树上显示当前状态。这可能是与最初加载的HTML不�
 
 滚动页面直到元素显示在可视区，*右键*元素选择*Scroll into View*
 
-![滚动视图](../../images/elements9.gif)
+![滚动视图](../../../images/elements9.gif)
 
 ## 设置DOM断点
 
@@ -157,7 +157,7 @@ DOM断点是一个类似`Sources`面板中的断点。它被用来暂停在一�
 
 举个例子，如果你的Javascript改变一个DOM元素的样式，你可以在元素的属性被修改的时候设置一个DOM断点。
 
-![break on](../../images/Breakon.png)
+![break on](../../../images/Breakon.png)
 
 #### 子树修改
 
@@ -186,7 +186,7 @@ element.className = 'active';
 ```
 document.getElementById('main-content').remove();
 ```
-![breakon Attr](../../images/elements10.gif)
+![breakon Attr](../../../images/elements10.gif)
 上图的过程，是按照以下步骤
 
 - 修改文本框内容，当内容不为空的时候，A标签添加一个`class="active"`
@@ -196,9 +196,9 @@ document.getElementById('main-content').remove();
 
 `Elements`和`Sources`面板都含有管理DOM断点的窗口。
 
-所有的DOM断点，可以点击右侧的面板(如果右边窗口太窄了， 会收起来，可以点击右上角的双箭头![breakico](../../images/breakico.png)打开)，每个断点都会带有标示符和断点类型，以列表的形式在面板中显示。
+所有的DOM断点，可以点击右侧的面板(如果右边窗口太窄了， 会收起来，可以点击右上角的双箭头![breakico](../../../images/breakico.png)打开)，每个断点都会带有标示符和断点类型，以列表的形式在面板中显示。
 
-![break](../../images/break.png)
+![break](../../../images/break.png)
 
 你可以在每个断点的列表项上这样做：
 
@@ -208,17 +208,17 @@ document.getElementById('main-content').remove();
 
 当DOM断点被触发的时候，这个断点会在DOM断点面板高亮显示。`Call Stack`面板会显示调试暂停的原因。
 
-![breakpoint-reason](../../images/breakpoint-reason.png)
+![breakpoint-reason](../../../images/breakpoint-reason.png)
 
 ## 查看元素事件监听器
 
 在`Event Listeners`面板查看与DOM节点相关的Javascript事件监听器
 
-![eventlisteners](../../images/eventlisteners.png)
+![eventlisteners](../../../images/eventlisteners.png)
 
 `Event Listeners`面板的顶级项显示注册侦听器的事件类型。
 
-![eventlistener](../../images/elements11.gif)
+![eventlistener](../../../images/elements11.gif)
 
 点击事件类型扩展箭头能看到注册事件的的处理程序列表。
 每个处理程序通过类似CSS选择器的方式识别元素，比如`document`、`button#call-to-action`。如果多个处理程序注册在同一个元素上，那么元素会以列表的形式重复列出。
@@ -238,9 +238,9 @@ document.getElementById('main-content').remove();
 - 当前选中元素
 - 当前选中元素的祖先
 
-如果找到过多的事件处理程序，可以选点击筛选![filter](../../images/filter.png)进行删选，选择`Selected Node Only`只显示当前节点的事件处理程序。
+如果找到过多的事件处理程序，可以选点击筛选![filter](../../../images/filter.png)进行删选，选择`Selected Node Only`只显示当前节点的事件处理程序。
 
-![filter](../../images/image_17.png)
+![filter](../../../images/image_17.png)
 
 > 很多谷歌扩展程序添加了它们自定义的事件在DOM上
 
