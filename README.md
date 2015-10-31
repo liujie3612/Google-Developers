@@ -1,6 +1,6 @@
 # Google-Developers(谷歌开发者文档)
 
-### 这个项目是翻译的 [https://developer.chrome.com/devtools](https://developer.chrome.com/devtools)，准备分几个阶段进行。
+这个项目是翻译的 [https://developer.chrome.com/devtools](https://developer.chrome.com/devtools)，准备分几个阶段进行。
 
 ### 第一个阶段
 
