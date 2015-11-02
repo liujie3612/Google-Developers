@@ -278,7 +278,7 @@ CSS定义页面的表示层。你可以看到和修改任意的CSS声明来控�
 
 逗号选择器的颜色不同，主要取决于它们是否匹配所选择的节点
 
-![逗号选择器](../../../selector-visibility.png)
+![逗号选择器](../../../images/selector-visibility.png)
 
 灰色的选择器（像上面的 audio 和 video）不匹配所选择的节点，上面所示的规则对应下面的 CSS 源：
 
@@ -306,11 +306,11 @@ video, audio, div, .message, body *, time {
 
 点击属性名称可以编辑：
 
-![编辑属性名](../../../image_20.png)
+![编辑属性名](../../../images/image_20.png)
 
 点击属性值可以编辑属性值，如果正在编辑一天属性名，可以按 Tab 键或 Enter 键来编辑属性值
 
-![编辑属性值](../../../image_20.png)
+![编辑属性值](../../../images/image_20.png)
 
 默认情况下， CSS 修改只是临时的，当重新加载页面是都将会丢失，想要自定义行为，[参阅 Workspace]()。
 
@@ -325,7 +325,7 @@ video, audio, div, .message, body *, time {
 
 在样式面板中，你可以使用样色选择器来设置一个在样式面板中已经存在的颜色。
 
-![颜色选择器](../../../color-picker.gif)
+![颜色选择器](../../../images/color-picker.gif)
 
 #### 添加一个新的属性
 
@@ -345,13 +345,13 @@ video, audio, div, .message, body *, time {
 
 现在最好能够添加一个新的选择器样式，单击样式面板右上角的加号可以新增一条 CSS 规则。
 
-![新增属性](../../../elements12.gif)
+![新增属性](../../../images/elements12.gif)
 
 #### 激活元素伪类
 
 如果你使用了伪类选择器来为 UI 元素提供动态样式，比如 `:hover` ，DevTools 可以手动对每个元素伪类设置样式。
 
-![查看伪类样式](../../../elements13.gif)
+![查看伪类样式](../../../images/elements13.gif)
 
 你可以触发一下的四个伪类：
 
@@ -375,7 +375,7 @@ video, audio, div, .message, body *, time {
 - 在侧边栏的源文件名上右击鼠标（在 Mac 中可以使用 Cmd+ 鼠标左键）
 - 选择 Local modifications 选项
 
-![查看修改面板](../../../elements14.gif)
+![查看修改面板](../../../images/elements14.gif)
 
 可以在 Source 面板中的编辑器编辑源代码来创建修改。
 
@@ -389,7 +389,7 @@ video, audio, div, .message, body *, time {
 - 展开二级选项可以查看更改前后的变化，红色背景的样式都是被删除的样式，绿色背景的样式是新增样式
 - 选择文件名旁边的 revert 会撤销针对该文件的所有本地修改
 
-![查看本地更改](../../../elements15.gif)
+![查看本地更改](../../../images/elements15.gif)
 
 在 Elements 面板中，可以使用 Ctrl + Z （Mac：Cmd + Z）来快速撤销一些小的更改。
 
@@ -397,7 +397,7 @@ video, audio, div, .message, body *, time {
 
 度量面板提供一个可视化视图，显示样式如何影响 CSS 盒子模型。
 
-![度量面板操作](../../../elements16.gif)
+![度量面板操作](../../../images/elements16.gif)
 
 度量面板显示了一套用矩形代表的 CSS 盒子模型，里层的矩形代表 content box ，即内容区域的大小；外框，如 border box 显示每个 border 的值：border-top、border-right、border-bottom、border-left。
 
