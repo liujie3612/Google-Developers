@@ -238,7 +238,7 @@ document.getElementById('main-content').remove();
 - 当前选中元素
 - 当前选中元素的祖先
 
-如果找到过多的事件处理程序，可以选点击筛选![filter](../../../images/filter.png)进行删选，选择`Selected Node Only`只显示当前节点的事件处理程序。
+如果找到过多的事件处理程序，可以选点击筛选![filter](../../../images/filters.png)进行筛选，选择`Selected Node Only`只显示当前节点的事件处理程序。
 
 ![filter](../../../images/image_17.png)
 
