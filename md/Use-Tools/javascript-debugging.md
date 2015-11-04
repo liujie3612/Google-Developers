@@ -331,7 +331,7 @@ source map 默认是不可用的，但如果想要仔细查看或启用它们，
 //# sourceMappingURL=/path/to/file.js.map
 ```
 
-这条注释一般在压缩工具压缩文件的时候就会生成，在 CSS 文件中，注释是这样的<span style="color:#080;"> /*# sourceMappingURL=style.css.map */</span>
+这条注释一般在压缩工具压缩文件的时候就会生成，在 CSS 文件中，注释是这样的 `/*# sourceMappingURL=style.css.map */`
 
 如果不想在压缩文件中加入注释，可以通过压缩后 JavaScript 文件的 HTTP header 来告诉 Devtools 在哪里可以找到 source map，这当然还需要配置你的 Web 服务器。
 
@@ -343,9 +343,11 @@ source map 默认是不可用的，但如果想要仔细查看或启用它们，
 
 然而，除了 source map 规定的部分，下面使用 eval 的方法可以让开发更简单。
 
-这个方法看起来与 <span style="color:#080;">  //# sourceMappingURL</span> 很相似，实际上在 source map V3 也有提及。在你的代码中加入下面的注释，这段注释将会被赋值，你可以给这些值、行内脚本、样式命名，让名字看起来更符合逻辑。
+这个方法看起来与 `//# sourceMappingURL` 很相似，实际上在 source map V3 也有提及。在你的代码中加入下面的注释，这段注释将会被赋值，你可以给这些值、行内脚本、样式命名，让名字看起来更符合逻辑。
 
-<p style="color:#080;">//# sourceURL=source.coffee</p>
+```js
+//# sourceURL=source.coffee
+```
 
 <strong>使用 sourceURL</strong>
 
