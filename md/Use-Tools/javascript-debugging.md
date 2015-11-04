@@ -335,7 +335,7 @@ source map 默认是不可用的，但如果想要仔细查看或启用它们，
 
 如果不想在压缩文件中加入注释，可以通过压缩后 JavaScript 文件的 HTTP header 来告诉 Devtools 在哪里可以找到 source map，这当然还需要配置你的 Web 服务器。
 
-<p style="color:#080;">X-SourceMap: /path/to/file.js.map</p>
+`X-SourceMap: /path/to/file.js.map`
 
 与单行注释一样，这个 header 也会遇到不支持单行注释引用 source map 的问题。你还应该验证你的 Web 服务器配置为提供 source map。比如 Google App Engine，要求对每个类型的文件有明确的配置，在这种情况下，你的 source map 文件应该使用 application/json 类型的 MIME type 来传输，而 Chrome 实际是会接收任何内容类型的，比如 application/octet-stream。
 
