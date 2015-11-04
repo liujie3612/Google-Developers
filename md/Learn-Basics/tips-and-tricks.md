@@ -874,22 +874,22 @@ Source Maps提供了一个语言无关的方式来映射出编译后的生产代
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_106.jpg)
 
-更多阅读：JSRuntime - A DevTools Extension For Grepping Objects | G+.(https://plus.google.com/u/0/115133653231679625609/posts/ih85hKCyGve)
+[更多阅读：JSRuntime - A DevTools Extension For Grepping Objects | G+.](https://plus.google.com/u/0/115133653231679625609/posts/ih85hKCyGve)
 
 ##其他资源
 
 除了上面的提示，也有许多优秀的拓展资源，幻灯片，文章和视频，但是却鲜为人知的，我们推荐的有：
 
-- [Chrome DevTools Revolutions 2013 (I/O 2013)](http://www.youtube.com/watch?v=x6qe_kVaBpg)
-- [Improving Your 2013 Productivity With The Chrome DevTools](http://www.youtube.com/watch?v=kVSo4buDAEE)
-- [The DevTools Cheatsheet](http://anti-code.com/devtools-cheatsheet/)
-- [Wait DevTools can do that?](http://www.igvita.com/slides/2012/devtools-tips-and-tricks/#1)
-- [Chrome DevTools Evolution (I/O 2012)](http://www.youtube.com/watch?v=3pxf3Ju2row)
-- [A Re-introduction to the Chrome DevTools (I/O 2011)](http://paulirish.com/2011/a-re-introduction-to-the-chrome-developer-tools)
-- [TextMate-like features in Chrome DevTools](http://www.elijahmanor.com/2012/02/textmate-like-t-t-in-chrome-dev-tools.html)
-- [Google Chrome Developer Tools: 12 Tricks to Develop Quicker](http://www.youtube.com/watch?v=nOEw9iiopwI)
-- [Become a JavaScript Power User With The DevTools](http://www.youtube.com/watch?v=4mf_yNLlgic)
-- [Modern Web Development](http://jtaby.com/2012/04/23/modern-web-development-part-1.html)
+* [Chrome DevTools Revolutions 2013 (I/O 2013)](http://www.youtube.com/watch?v=x6qe_kVaBpg)
+* [Improving Your 2013 Productivity With The Chrome DevTools](http://www.youtube.com/watch?v=kVSo4buDAEE)
+* [The DevTools Cheatsheet](http://anti-code.com/devtools-cheatsheet/)
+* [Wait DevTools can do that?](http://www.igvita.com/slides/2012/devtools-tips-and-tricks/#1)
+* [Chrome DevTools Evolution (I/O 2012)](http://www.youtube.com/watch?v=3pxf3Ju2row)
+* [A Re-introduction to the Chrome DevTools (I/O 2011)](http://paulirish.com/2011/a-re-introduction-to-the-chrome-developer-tools)
+* [TextMate-like features in Chrome DevTools](http://www.elijahmanor.com/2012/02/textmate-like-t-t-in-chrome-dev-tools.html)
+* [Google Chrome Developer Tools: 12 Tricks to Develop Quicker](http://www.youtube.com/watch?v=nOEw9iiopwI)
+* [Become a JavaScript Power User With The DevTools](http://www.youtube.com/watch?v=4mf_yNLlgic)
+* [Modern Web Development](http://jtaby.com/2012/04/23/modern-web-development-part-1.html)
 
 
 
