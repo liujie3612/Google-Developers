@@ -537,8 +537,8 @@ Source Maps提供了一个语言无关的方式来映射出编译后的生产代
 
 ###编写和调试Sass
 
-```提示：在Chrome中去使用Sass去调试你需要有3.3.0版本的(预发布)Sass预编译器，这也是当前支持生成source map唯一支持的版本。 
-```
+```提示：在Chrome中去使用Sass去调试你需要有3.3.0版本的(预发布)Sass预编译器，这也是当前支持生成source map唯一支持的版本。 ```
+
 页面当中包含一个CSS预处理器可能会有一个小问题，因为在开发者工具下进行的css修改通常不会应用到Sass的源文件下，这也就意味着如果你在样式上进行了大量的修改，你需要返回去，用一个额外的编辑器手动去将它们应用到源文件上。
 
 这个将不会再是一个问题在最近Sass开发工作流上，要想支持Sass：
@@ -870,7 +870,7 @@ Source Maps提供了一个语言无关的方式来映射出编译后的生产代
 
 ###JSRunTime:开发者工具对于Grepping JavaScript对象的拓展
 
-![Andrei Kashcha](https://plus.google.com/114708134049085210473)为谷歌开发者工具写了一个非常有用的拓展，能够在内存中检索出JavaScript对象的一个图形然后匹配出它们的值或者名称。
+[Andrei Kashcha](https://plus.google.com/114708134049085210473)为谷歌开发者工具写了一个非常有用的拓展，能够在内存中检索出JavaScript对象的一个图形然后匹配出它们的值或者名称。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_106.jpg)
 
