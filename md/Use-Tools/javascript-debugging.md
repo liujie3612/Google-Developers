@@ -354,7 +354,7 @@ source map 默认是不可用的，但如果想要仔细查看或启用它们，
 - 输入一个文件名到 input 中
 - 点击 compile 按钮
 - 会弹出一个包含对 CoffeeScript source 计算值的警告框
-- 现在展开 Source 面板，你会发现有一个新文件，文件名为刚才输入的文件名，双击打开之后，会看到一个对 JavaScript 源文件解析完成的文件，调试抽象语言时，之歌方式会有很大的帮助。
+- 现在展开 Source 面板，你会发现有一个新文件，文件名为刚才输入的文件名，双击打开之后，会看到一个对 JavaScript 源文件解析完成的文件，调试抽象语言时，这个方式会有很大的帮助。
 
 ![coffeescript](../../images/coffeescript.jpg)
 
