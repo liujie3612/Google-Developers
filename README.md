@@ -8,5 +8,5 @@
 
 ### 第二个阶段
 
-做成网页，放到[野狗](https://www.wilddog.com/)的域名下。
+做成网页，放到[野狗](https://www.wilddog.com/)的域名下，供其他的开发者参考。
 
