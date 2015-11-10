@@ -13,7 +13,7 @@
 
 ![](https://developer.chrome.com/devtools/docs/network-files/resource-timing-overview.png)
 
-这个API在任何网页都是可用的，而不仅仅是在开发者工具中，在Chrome中，它是用在全局方法里的，<code>window.performance </code>对象，<code>performance.getEntries()</code>方法返回了一个“资源时间对象”的数组，页面上的每个请求都是在页面上的，
+这个API在任何网页都是可用的，而不仅仅是在开发者工具中，在Chrome中，它是用在全局方法里的，<code>window.performance </code>对象，<code>performance.getEntries()</code>方法返回了一个“资源时间对象”的数组，页面上的每个请求都是在页面上的
 
 想要试试，在当前页面上打开JavaScript控制台，输入下面的提示，然后回车：
 
