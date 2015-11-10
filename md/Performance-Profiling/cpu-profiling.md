@@ -1,89 +1,139 @@
-Profiling JavaScript Performance
+#解析JavaScript性能
 
-Intro to JavaScript Profiling
-Using the Flame Chart
-Introduction to JavaScript Profiling
+##介绍JavaScript的性能分析
 
-Using Google Chrome, open the V8 Benchmark Suite page. Click the Start profiling button or press Cmd + E start recording a JavaScript CPU profile. Now refresh the V8 Benchmark Suite page.
+使用google chrome，打开[V8 Benchmark Suite](http://v8.googlecode.com/svn/data/benchmarks/v7/run.html)页面，现在打开chrome开发者工具，导航到性能面板，然后确认“Collect JavaScript CPU Profile”是被选择的，现在点击**Start**按钮或者按下`Cmd` + `E`来开始记录一个JavaScript CPU性能。现在刷新V8基准套件页面。、
 
-When the page has completed reloading, a score for the benchmark tests is shown. Return to the DevTools and stop the recording by clicking the Stop button or by pressing Cmd + E again.
+当页面已经完成重新加载，基准测试的分数就显示出来了，返回到开发者工具然后点击停止按钮来停止录制或者再次按下`Cmd` + `E` 
+
+![heavy-bottom-up](https://developer.chrome.com/devtools/docs/cpu-profiling-files/heavy-bottom-up.png)
+
+这种**自下而上**的视图列出了对性能影响的功能。这也使您可以检查调用路径的功能。
+
+现在选择自上而下的视图通过点击Bottom Up / Top Down按钮。然后点击**功能**栏左侧的小箭头。**自上而下**的视图显示了调用结构的整体图片，从调用堆栈的顶部开始。
+
+> 提示：您可以点击**百分比**按钮来查看绝对时间。
+
+选择**功能**栏之一的功能，然后点击** Focus selected function**按钮（右边的眼睛图标）
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/focus-selected-function.png)
+
+这个过滤了性能只显示选择的功能和它的调用者。在窗口的右下角点击**重新加载**按钮恢复到原始状态。
+
+在功能栏里选择其中之一功能，然后点击**排除选定功能**的里键(x 图标),根据你选择的功能，你会看到这样的事情：
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/tree-top-down.png)
+
+排除选择功能按钮从配置文件删除选定的功能然后收取它的调用者排除功能的总时间。点击**重新加载**按钮恢复到原始状态。
+
+你可以记录多个配置文件，点击开始分析按钮，重新载入V8基准测试页面，然后点击停止分析按钮
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/sidebar-profile-history.png)
+
+在左边的侧边栏中列出了记录配置文件，右侧的树状视图显示聚集在所选配置文件中的信息。
+
+##使用火焰图
+
+随着时间的推移，火焰图视图提供了一个JavaScript处理的可视化表示，类似于在时间线和网络面板中发现的，在执行完*一个JavaScript和CPU解析*后在细节视图上使用火焰图功能，你能用几种不同的方式去查看解析数据。
+
+###可视化执行路径
+
+通过视觉上分析和理解函数调用的进程你能够更好的理解你的应用程序执行的路径。
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/flamechart00.png)
+
+###用颜色编码来识别异常值
+
+通过缩小时你能够识别出可以被优化的重复模式，或者更重要的是，你能更加容易发现异常值或意外的执行。
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/flamechart-outliers.png)
+
+###针对于一个时间尺度(像时间线)可视化的JavaScript探查数据
+
+其他的JavaScript解析记录数据随着时间的推移是汇总的，而火焰图是按时间来记录数据的，这就意味着，当你看到事件发生时，真正的透视JavaScript的执行，例如当你在时间线上看到黄色的大条纹，这是看问题的最佳方式。
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/flamechart02.png)
+
+> 注意： 横轴是时间，纵轴是调用堆栈，开销较高的功能是宽的，调用堆栈表示Y轴，所以一个高的火焰不一定是值得注意的，注意宽条，而不用管他们的调用堆栈中的位置。
+
+###如何使用火焰图
+
+1. 打开开发者面板，然后去“解析面板”
+2. 选择**Record JavaScript CPU profile**然后点击**Start**
+3. 当您完成收集数据，单击"Stop"
+
+在解析视图中，在开发者工具底部的选择菜单中选择火焰图可视化。
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/flamechart03.jpg)
+
+> 注意: 在Profiling面板开发者工具火焰图里启用**High resolution CPU profiling**能提高分析时间精度,启动后，您甚至可以放大到十分之一毫秒来查看。
+
+在面板的顶部是一个显示了整个记录的概要，如下图所示，您可以用鼠标选择它放大概述的特定区域，你也可以点击空白区域然后拖动你的鼠标左右平移，时间刻度详细视图相应的缩小。
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/flamechart04.png)
+
+在详细信息视图里，一个调用栈表示为一个功能块的栈，对立的一个块被称为低功能块，鼠标悬停于给定的块，显示其函数名和定时数据。
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/flamechart05.jpg)
+
+* Name - 函数的名称
+* Self time -  当前调用函数的完成时间，仅仅包括函数声明的本身，不包括它调用的其他函数。
+* Total time - 当前调用函数的完成时间和它调用任何函数的总时间。
+* Aggregated self time - 在整个记录中，函数调用的聚合时间，不包括这个函数调用的函数。
+* Aggregated total time - 函数所有调用聚合的总时间，包括函数调用的函数。
+
+在火焰图中表示的颜色是相当的随机的，在调用中函数总是被用相同的颜色标记，这可以让你看到执行的图案，然后发现异常值更容易，在时间线中所用的颜色没有相关性。
+
+![](https://developer.chrome.com/devtools/docs/cpu-profiling-files/flamechart06.png)
+
+点击一个功能块打开它包含的JavaScript文件，在函数定义的行。
 
 
-This Bottom Up view lists functions by impact on performance. It also enables you to examine the calling paths to those functions.
-
-Now select the Top Down view by clicking the Bottom Up / Top Down selection button. Then click the small arrow to the left of (program) in the Function column. The Top Down view shows an overall picture of the calling structure, starting at the top of the call stack.
-
-Note: You can click the Percentage button to view absolute times.
-
-Select one of the functions in the Function column, then click the Focus selected function button (the Eye icon on the right).
 
 
-This filters the profile to show only the selected function and its callers. Click the Reload button at the bottom-right of the window to restore the profile to its original state.
-
-Select one of the functions in the Function column, then click the Exclude selected function button (the X icon). Depending on the function you selected, you should see something like this:
 
 
-The Exclude selected function button removes the selected function from the profile and charges its callers with the excluded function's total time. Click the Reload button to restore the profile to its original state.
-
-You can record multiple profiles. Click the Start profiling button, reload the V8 Benchmark page, then click the Stop profiling button.
 
 
-The sidebar on the left lists your recorded profiles, the tree view on the right shows the information gathered for the selected profile.
-
-Using the Flame Chart
-
-The Flame Chart view provides a visual representation of JavaScript processing over time, similar to those found in the Timeline and Network panels. Using the Flame Chart feature on the Details view after performing a JavaScript & CPU profile, you are able to view the profile data a few different ways.
-
-Visualizing execution paths
-
-By analyzing and understanding function call progression visually you can gain a better understanding of the execution paths within your app.
 
 
-Identifying outliers with color coding
-
-When zoomed out you can identify repetitive patterns that could be optimized, or more importantly, you're able to spot outliers or unexpected executions much easier.
 
 
-Visualizing JavaScript profiler data against a time scale (like Timeline)
-
-Other JavaScript profiling reports data that is aggregated over time, whereas the Flame Chart reports data by time. This means when you see events happen, you are able to drill into the time scale of them and really get some perspective on execution of JavaScript. For example, when you see big streaks of yellow in the Timeline, this is the perfect way to see the issue.
 
 
-You may even want to do a Timeline recording simultaneously while you do a recording with the JavaScript Profiler. Here’s a snippet you can use to do this:
-
-    (function() {
-      console.timeline();
-      console.profile();
-      setTimeout(function() {
-          console.timelineEnd();
-          console.profileEnd();
-      }, 3000);
-    })();
-Note: The horizontal axis is time and vertical axis is the call stack. Expensive functions are wide. Call stacks are represented on the Y axis, so a tall flame is not necessarily significant. Pay close attention to wide bars, no matter their position in the call stack.
-
-How to use the Flame Chart:
-
-Open the DevTools and go to the Profiles panel.
-Choose Record JavaScript CPU profile and click Start.
-When you are done collecting data, click Stop.
-In the profile view, select the Flame Chart visualization from the select menu at the bottom of the DevTools.
 
 
-Note: For increased accuracy of profiling times enable High resolution CPU profiling in the DevTools flame-chart under Profiling. When enabled, you can zoom into the graph to view it by a tenth of a millisecond even.
-
-Across the top of the panel is an overview that shows the entire recording. You can zoom in on a specific region of the overview by selecting it with your mouse as shown below, and you can also pan left and right by clicking on the white area and dragging your mouse. The Details view timescale shrinks accordingly.
 
 
-In the Details view, a call stack is represented as a stack of function "blocks". A block that sits atop another was called by the lower function block. Hovering over a given block displays its function name and timing data:
 
 
-Name — The name of the function.
-Self time — How long it took to complete the current invocation of the function, including only the statements in the function itself, not including any functions that it called.
-Total time — The time it took to complete the current invocation of this function and any functions that it called.
-Aggregated self time — Aggregate time for all invocations of the function across the recording, not including functions called by this function.
-Aggregated total time — Aggregate total time for all invocations of the function, including functions called by this function.
-The colors in the Flame Chart are reused for same functions. This helps you see a common pattern and then spot outliers better. There is no correlation to colors used in the Timeline for things.
 
 
-Clicking a function block opens its containing JavaScript file in the Sources panel, at the line where the function is defined.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
