@@ -64,20 +64,6 @@ JavaScript Console 为开发者们测试网页和应用提供了两个主要的�
 
 这个图片显示了窗口原点在顶部框架和二级框架之间的改变
 
-
-### Console 设置
-
-你可以在 DevTools Settings 对话框中的 General 标签下修改 Console 的两个全局选项：
-
-
-* **Log XMLHTTPRequests**&mdash;决定每个 XMLHTTPRequest 是否都显示在 Console 面板上。
-* **Preserve log upon navigation**&mdash;决定你在当前页面中 console 的记录是否会因为你跳转到其他页面而被清空。这两个选项默认都是禁用的。
-
-你也可以在 console 的任意地方右击，通过选择出现的菜单来改变这两个选项。
-
-
-![Console 面板右击菜单视图](https://developer.chrome.com/devtools/docs/console-files/console-context-menu.png)
-
 ## 使用 Console API
 
 Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的主要目的是在你应用运行的时候[显示信息](#writing_to_the_console)（例如显示一个属性值，或者一整个对象或者 DOM 对象）到 console 上。为了避免 console 中的视觉混乱，你也可以成组的输出信息。
@@ -429,3 +415,12 @@ CPU 分析器可以被嵌套，例如：
     profileEnd("A");
     profileEnd("B");
 
+### Console 设置
+
+你可以在 DevTools Settings 对话框中的 General 标签下修改 Console 的两个全局选项：
+
+
+* **Log XMLHTTPRequests**&mdash;决定每个 XMLHTTPRequest 是否都显示在 Console 面板上。
+* **Preserve log upon navigation**&mdash;决定你在当前页面中 console 的记录是否会因为你跳转到其他页面而被清空。这两个选项默认都是禁用的。
+
+你也可以在 console 的任意地方右击，通过选择出现的菜单来改变这两个选项。
