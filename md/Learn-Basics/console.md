@@ -328,28 +328,21 @@ Console API 是 DevTools 定义的全局对象 `console` 的方法集合。API �
 
 ### 审查 DOM 元素和 JavaScript 堆对象
 
-[`inspect()`](commandline-api#inspectobject) 方法以 DOM 元素引用（或者 JavaScript 引用）作为参数然后把对应元素或者对象显示在相应的面板中－DOM 元素显示在 Elements 面板中，JavaScript 对象显示在 Profiles 面板中。
+[`inspect()`](commandline-api#inspectobject) 方法以DOM 元素引用或者 JavaScript 引用作为参数。然后把对应元素或者对象显示在相应的面板中－DOM 元素显示在 Elements 面板中，JavaScript 对象显示在 Profiles 面板中。
 
-例如，下面截图中 `$()` 用来获得一个 `<li>` 元素的引用。然后将 the last evaluated expression property ([`$_`](commandline-api#_)) 传递给 `inspect()` 从而打开 Elements 面板看到那个元素。
+当此段代码在这个页面你的控制台执行的时候，它将会抓取这个值然后在元素面板里展示，这个利用了$_ 属性的优越性来得到输出表达式的计算结果。
 
-
+    $('[data-target="inspecting-dom-elements-example"]')
+    inspect($_)
 
 ### 获得最近选择的元素或者对象
 
-通常测试时，你要么直接在 Elements 面板，要么使用 Selection 工具（放大镜图标）选择DOM元素，这样你才可以详细的审查这个元素。同样的，当要在 Profiles 面板中统计内存使用简况，你也需要先获取需要审查的 JavaScript 对象。
-
-Console 会记住最后五个元素（或者堆对象）你可以通过使用 `$0`, `$1`, `$2`, `$3` 和 `$4` 来选择它们并且让它们像属性一样使用。最近选择的元素或者对象可以通过 `$0` 调用，倒数第二个最近的是 `$1`，以此类推。
-
-下面这个截图展示了在选择三个不同元素之后，这些属性在 Elements 面板中返回的值：
-
-
-
-**注意：**你也可以在 Console 中的任意元素上右击或者按住 Control 键点击并且选择 **Reveal in Elements Panel** 从而通过 Elements 面板查看。
+console会存储最后五个元素和对象选择，当你在元素面板选择一个元素或者在分析面板里选择一个对象的时候，这个将会推到历史栈中，$x提供了访问历史栈的方法，计算机将会从0开始计数，这就意味着最新的条目是$0而最老的条目是$4.
 
 
 ### 监听事件
 
-[`monitorEvents()`](commandline-api#monitoreventsobject_events) 命令可以监控某对象的一个或多个指定的事件。当事件在被监控的对象上触发时，相应的事件对象将会被打印到 Console 上。 你指定的对象和你想要监听的事件。例如，下面代码会监听触发在全局 window 对象的每一个“resize”事件。
+[`monitorEvents()`](https://developer.chrome.com/devtools/docs/commandline-api#monitoreventsobject-events) 命令可以监控某对象的一个或多个指定的事件。当事件在被监控的对象上触发时，相应的事件对象将会被打印到 Console 上。 你指定的对象和你想要监听的事件。例如，下面代码会监听触发在全局 window 对象的每一个“resize”事件。
 
     monitorEvents(window, "resize");
 
@@ -363,7 +356,7 @@ Console 会记住最后五个元素（或者堆对象）你可以通过使用 `$
 
     monitorEvents($('#scrollBar'), "touch");
 
-查看 Console API 参考 [`monitorEvents()`](commandline-api#monitoreventsobject_events) 文档，你可以找到被支持的事件类型列表。
+查看 Console API 参考 [`monitorEvents()`](https://developer.chrome.com/devtools/docs/commandline-api#monitoreventsobject-events) 文档，你可以找到被支持的事件类型列表。
 
 停止监控事件可以使用 `unmonitorEvents()`，需要把想要停止监控的对象传递进去。
 
@@ -371,7 +364,7 @@ Console 会记住最后五个元素（或者堆对象）你可以通过使用 `$
 
 ### 控制 CPU 分析器
 
-你可以使用命令行命令 [`profile()`](commandline-api#profilename) 和 [`profileEnd()`](commandline-api#profileendname) 来创建一个 JavaScript CPU 分析器（profiler）。你可以为你创建的分析器自定义一个特定的名字。
+`profile()`功能开始一个JavaScript CPU分析，你也可以传一个字符串来命名这个分析。用相同的方法通过调用`profileEnd()`来结束分析，你称之为初始化。
 
 创建一个新的配置文件而不提供一个名称。
 
@@ -379,21 +372,23 @@ Console 会记住最后五个元素（或者堆对象）你可以通过使用 `$
     profileEnd()
 
 
-例如，下面展示了如何用默认名字创建一个分析器：
-
-![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-console.png)
-
-在 Profiles 面板中，这个新创建的分析器会以 “Profile 1” 的名字出现：
+分析例子
 
 ![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-panel.png)
 
-如果你为新创建的分析器指定了一个标签，它通常用作分析器的标题。如果你创建了多个同名的分析器，他们会被归在同一标题的的不同子标题下：
+如果你提供一个标签，那就是分析的名称，如果你创建多个分析，那么它就会用这个名称形成一个组。
 
-![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-console-2.png)
+示例代码:
 
-Profiles 面板的结果如下：
+    profile("init")
+    profileEnd("init")
+    profile("init")
+    profileEnd("init")
 
+在分析面板中输出的结果:
+    
 ![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-panel-2.png)
+
 
 CPU 分析器可以被嵌套，例如：
 
@@ -411,10 +406,26 @@ CPU 分析器可以被嵌套，例如：
 
 ### Console 设置
 
-你可以在 DevTools Settings 对话框中的 General 标签下修改 Console 的两个全局选项：
+在开发者工具设置对话框中的通用面板里，控制台有四个你可以修改的设置。
 
-
+* **Hide network messages** 指示控制台不再显示网络问题的日志，例如，404和500系列的错误将不会被记录。
 * **Log XMLHTTPRequests**&mdash;决定每个 XMLHTTPRequest 是否都显示在 Console 面板上。
-* **Preserve log upon navigation**&mdash;决定你在当前页面中 console 的记录是否会因为你跳转到其他页面而被清空。这两个选项默认都是禁用的。
+* **Preserve log upon navigation**&mdash; 确定在您导航到另一个网页控制台历史记录是否不会被删除。
+* **Show timestamps** 当这个声明应用到控制台的时候，控制台的消息将会调用时间戳，同时这样将会禁用[消息堆积](https://developer.chrome.com/devtools/docs/console#message-stacking)。
 
-你也可以在 console 的任意地方右击，通过选择出现的菜单来改变这两个选项。
+## 摘要
+
+开发者工具提供了一个强大的控制台。 你现在应该可以理解如何开始使用它来储存信息和抓取元素。这个功能还只是表层的，这个页面是你的游乐场，这些都是你的积木。
+
+
+
+
+
+
+
+
+
+
+
+
+
