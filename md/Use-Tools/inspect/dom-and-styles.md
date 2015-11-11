@@ -166,7 +166,7 @@ DOM断点是一个类似`Sources`面板中的断点。它被用来暂停在一�
 var element = document.getElementById('main-content');
 //修改这个元素的子树
 var mySpan = document.createElement('span');
-element.appendChild(myspan);
+element.appendChild(mySpan);
 ```
 
 #### Attributes modifications
