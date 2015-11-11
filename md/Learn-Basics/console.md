@@ -66,7 +66,7 @@ JavaScript Console 为开发者们测试网页和应用提供了两个主要的�
 
 ## 使用 Console API
 
-Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的主要目的是在你应用运行的时候[显示信息](#writing_to_the_console)（例如显示一个属性值，或者一整个对象或者 DOM 对象）到 console 上。为了避免 console 中的视觉混乱，你也可以成组的输出信息。
+Console API 是 DevTools 定义的全局对象 `console` 的方法集合。API 的主要目的是在你应用运行的时候[显示信息](#writing_to_the_console)（例如显示一个属性值，或者一整个对象或者 DOM 对象）到 console 上。为了避免 console 中的视觉混乱，你也可以成组的输出信息。
 
 ### 输出信息到 console
 
@@ -118,17 +118,16 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 你可以通过选中筛选选项来快速筛选 console 输出的信息级别，例如错误、警告或者正常的输出信息。点击筛选漏斗图标（如下图）然后就可以选择你需要的筛选选项。
 
-
-![仅仅显示 console.warn() 输出信息](https://developer.chrome.com/devtools/docs/console-files/filter-errors.png)
-
 筛选选项：
 
 *   **All**&mdash;显示所有输出在 console 的信息
 *   **Errors**&mdash;只显示 `console.error()` 输出的信息
 *   **Warnings**&mdash;只显示 `console.warn()` 输出的信息
-*   **Logs**&mdash;只显示 `console.log()`， `console.info()` 以及 `console.debug()` 输出的信息
-*   **Debug**&mdash;只显示 `console.timeEnd()`  和其他 console 输出的信息
+*   **Info**&mdash;只显示 `console.info()` 输出的信息
+*   **Logs**&mdash;只显示 `console.log()`输出的信息
+*   **Debug**&mdash;只显示 `console.timeEnd()`  和`console.debug()`输出的信息
 
+![仅仅显示 console.warn() 输出信息](https://developer.chrome.com/devtools/docs/console-files/filter-errors.png)
 
 ### 分组输出
 
@@ -299,38 +298,33 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 * 一些方便选择 DOM 元素的函数
 * 控制 CPU 分析器的函数
 * 一些 Console API  方法也可以执行
-* 监测事件
+* 监听事件
 * 查看注册在对象上的事件监听器
 
 
 ### 执行表达式
 
-在实时 shell 中，当你按下 Retun 或者 Enter 键时，会试图执行计算你输入的 JavaScript 表达式。Console 提供了自动完成和 tab 键完成。当你输入表达式的时候，建议属性名会自动弹出来。如果这些属性有相同的前缀，按下 Tab 键会补全它们。按下右方向键接受当前推荐选项。如果建议选项只有一条匹配属性时，按下 Tab 键就会自动接受补全该选项。
-
+当你按下`Enter`时，console将会执行任何的JavaScript表达式。它也提供了自动完成和 tab补全。当你输入表达式的时候，建议属性名会自动弹出来。如果这些属性有相同的前缀，按下 Tab 键会补全它们。按下右方向键接受当前推荐选项。如果建议选项只有一条匹配属性时，按下 Tab 键就会自动接受补全该选项。
+ 
 ![](https://developer.chrome.com/devtools/docs/console-files/evaluate-expressions.png)
 
-如果想要在实时 shell 中一次输入多行表达式（例如一个 function 函数定义），你需要按下 Shift＋Enter 来换行。
-
-![](https://developer.chrome.com/devtools/docs/console-files/multiline-expression.png)
 
 ### 选取对象
 
-命令行 API 提供几个方法可以访问你应用中的 DOM 元素。例如 `$()` 方法返回匹配传递进去的 CSS 选择器的第一个元素，功能类似 [`document.querySelector()`](http://docs.webplatform.org/wiki/css/selectors_api/querySelector)。举个例子，下面代码返回 ID 为 “loginBtn” 的元素。
+对于选择元素有几个快捷键，对比打出它们的标准行这将会节省你宝贵的时间。
 
-    $('#loginBtn');
+* [$()](https://developer.chrome.com/devtools/docs/commandline-api#selector)  返回匹配指定CSS选择器的第一个元素。这是[document.querySelector()](http://docs.webplatform.org/wiki/css/selectors_api/querySelector)的快捷方式
 
+* [$$()](https://developer.chrome.com/devtools/docs/commandline-api#selector-1) 返回匹配所欲CSS选择器的元素.它是[document.querySelectorAll()](http://docs.webplatform.org/wiki/css/selectors_api/querySelectorAll)的别名。
 
-![](https://developer.chrome.com/devtools/docs/console-files/select-login-btn.png)
+* [$x()](https://developer.chrome.com/devtools/docs/commandline-api#xpath) 返回匹配指定的[XPath](http://en.wikipedia.org/wiki/XPath)的数组元素。
 
-`$$()` 命令返回匹配传递进去 CSS 选择器的所有元素组成的数组，功能类似 [`document.querySelectorAll()`](http://docs.webplatform.org/wiki/css/selectors_api/querySelectorAll)。举个例子，下面代码选择了所有带有 "loginBtn" 类的  `&lt;button&gt;` 元素。
+目标选择的例子：
 
-    $$('button.loginBtn');
+    $('code') // Returns the first code element in the document.
+    $$('figure') // Returns an array of all figure elements in the document.
+    $x('html/body/p') // Returns an array of all paragraphs in the document body.
 
-![](https://developer.chrome.com/devtools/docs/console-files/select-multiple-login.png)
-
-最后，[`x()`](commandline-api#xpath) 方法使用 XPath 路径作为参数然后返回所有匹配这个特定路径元素组成的数组。下面代码返回所有 `<body>` 标签下面的 &lt;script&gt; 元素：
-
-    $x('/html/body/script');
 
 ### 审查 DOM 元素和 JavaScript 堆对象
 
@@ -338,7 +332,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 例如，下面截图中 `$()` 用来获得一个 `<li>` 元素的引用。然后将 the last evaluated expression property ([`$_`](commandline-api#_)) 传递给 `inspect()` 从而打开 Elements 面板看到那个元素。
 
-![](https://developer.chrome.com/devtools/docs/console-files/inspect2.png)
+
 
 ### 获得最近选择的元素或者对象
 
@@ -348,7 +342,7 @@ Console 会记住最后五个元素（或者堆对象）你可以通过使用 `$
 
 下面这个截图展示了在选择三个不同元素之后，这些属性在 Elements 面板中返回的值：
 
-![最近选择的元素](https://developer.chrome.com/devtools/docs/console-files/recent-selection.png)
+
 
 **注意：**你也可以在 Console 中的任意元素上右击或者按住 Control 键点击并且选择 **Reveal in Elements Panel** 从而通过 Elements 面板查看。
 
@@ -359,7 +353,7 @@ Console 会记住最后五个元素（或者堆对象）你可以通过使用 `$
 
     monitorEvents(window, "resize");
 
-![监听 window resize 事件](https://developer.chrome.com/devtools/docs/console-files/monitor-resize.png)
+
 
 想要监控多个事件，你可以把事件名数组作为第二个参数传递。下面代码会监控触发在 `document.body` 上的 “mousedown” 和 “mouseup” 事件。
 
