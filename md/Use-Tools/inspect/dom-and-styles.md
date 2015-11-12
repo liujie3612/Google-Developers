@@ -189,10 +189,10 @@ document.getElementById('main-content').remove();
 ![breakon Attr](../../../images/elements10.gif)
 上图的过程，是按照以下步骤
 
-- 修改文本框内容，当内容不为空的时候，A标签添加一个`class="active"`
-- 在A标签上添加属性修改断点
-- 在执行A标签属性修改代码的时候，触发属性修改断点，并跳转到相关代码
-- 鼠标悬停在Javascript的可用变量的时候，显示更多详细信息。
+- 在搜索框输入文字，输入框的大小改变
+- 在搜索框上添加 Attributes modifications 断点
+- 在搜索框输入内容时，触发 Attributes modifications 断点，并跳转到相关代码
+- 鼠标悬停在 Javascript 断点的变量时，显示变量详细信息
 
 `Elements`和`Sources`面板都含有管理DOM断点的窗口。
 
