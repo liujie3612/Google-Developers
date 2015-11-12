@@ -113,11 +113,11 @@ Console drawer 可以让你在当前调试暂停时的 Scope 中做测试，按�
 
 #### 动态 JavaScript 中的断点
 
-- 
--
--
--
--
+- 加载外部 js 文件
+- 在 Sources 面板选择刚才加载的 js 文件并打上断点
+- 执行函数
+- 你会在打上的断点处暂停
+- 点击继续按钮![continue](../../images/continue.jpg)，或使用 `F8` 可以继续执行
 
 #### 在下一步 JavaScript 暂停
 
