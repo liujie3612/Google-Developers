@@ -202,9 +202,9 @@ document.getElementById('main-content').remove();
 
 你可以在每个断点的列表项上这样做：
 
-- *鼠标悬停*在元素标识符上，在页面中显示元素的所在位置
-- *单击*元素跳转到本地的`Elements`面板
-- *切换多选框*启用或停用这个断点
+- **鼠标悬停**在元素标识符上，在页面中显示元素的所在位置
+- **单击**元素跳转到本地的`Elements`面板
+- **切换多选框**启用或停用这个断点
 
 当DOM断点被触发的时候，这个断点会在DOM断点面板高亮显示。`Call Stack`面板会显示调试暂停的原因。
 
@@ -225,13 +225,13 @@ document.getElementById('main-content').remove();
 
 
 - *handler*包含回调函数，右键点击*Show Function Definition*查看函数在哪里定义的。
-- *isAttribute* 如果这个事件是通过DOM属性注册的，举个栗子`onclick`
+- *isAttribute* 如果这个事件是通过DOM属性注册的，举个例子`onclick`
 - *lineNumber*注册事件的行号
 - *listenerBody* 字符串表示的回调函数
 - *node* 注册侦听器所在的DOM节点。鼠标悬停在DOM上可以在页面中显示它
 - *sourceName* 包含事件侦听器的URL路径
 - *type* 事件类型
-- *useCapture* 布尔值，代表addEventListener 上的`useCapture`是否设置
+- *useCapture* 布尔值，代表addEventListener 上的[useCapture](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener)是否设置
 
 默认情况下，已注册的事件处理程序会以以下类型显示：
 
