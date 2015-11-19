@@ -2,7 +2,7 @@
 
 由于 JavaScript 应用程序的复杂性的增加，开发者需要高效的 JavaScript 调试工具来快速发现问题出现的原因并有效地解决它。 Chrome Devtools 包含很多有用的工具，这些工具可以帮助减少调试 JavaScript 的痛苦。
 
-在这一部分，我们将通过调试 [Google Closure hovercard demo](https://rawgit.com/google/closure-library/master/closure/goog/demos/hovercard.html) 和其他例子来演示如何使用这些工具。
+在这一部分，我们将通过调试 [Google Closure hovercard demo](https://rawgit.com/google/closure-library/master/closure/goog/demos/hovercard.html) 和其他动态例子来演示如何使用这些工具。
 
 >注意：如果你是一位 web 开发人员，并且希望获取最新的 Devtools 你可以使用[Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)
 
@@ -20,7 +20,7 @@ Sources 面板显示当前页面的所有 scripts，面板的图标提供了控�
 
 #### 控制执行
 
-控制执行的按钮都在面板的上面，这些按钮可以让你分部操作你的代码，可用的按钮有：
+控制执行的按钮都在面板的上面，这些按钮可以让你分步操作你的代码，可用的按钮有：
 
 ![continue](../../images/continue.jpg)Continue：继续执行代码，直到执行到下一个断点
 
